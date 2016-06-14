@@ -1,0 +1,21 @@
+<div baCardBlur class="animated fadeIn card {{cardType}} {{baCardClass || ''}}" zoom-in>
+    <div *ngIf="title" class="card-header clearfix">
+        <h3 class="card-title">{{title}}</h3>
+        <a *ngIf="source" (click)="isCollapsed = !isCollapsed" class="view-source">Source
+                  </a>
+    </div>
+    <div class="card-body">
+        <ng-content></ng-content>
+        <div *ngIf="source" [collapse]="isCollapsed" class="source-html">
+        <div class="well well-lg">
+            <pre id="source-html-code">&lt;button type="button" class="btn btn-default"&gt;Default&lt;/button&gt;<br />
+&lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;<br />
+&lt;button type="button" class="btn btn-success"&gt;Success&lt;/button&gt;<br />
+&lt;button type="button" class="btn btn-info"&gt;Info&lt;/button&gt;<br />
+&lt;button type="button" class="btn btn-warning"&gt;Warning&lt;/button&gt;<br />
+&lt;button type="button" class="btn btn-danger"&gt;Danger&lt;/button&gt;</pre>
+        </div>
+    </div>
+    </div>
+    
+</div>
